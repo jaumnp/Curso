@@ -1,6 +1,15 @@
 .hero {
   width: 100%;
   padding: 2.5rem 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero h1 {
+  max-width: 40rem;
 }
 
 .hero h1 div {
@@ -25,124 +34,188 @@
 }
 
 .hero h1 span {
-    display: block;
-    animation: slideUp 6s infinite ease-in-out;
+  display: block;
+  animation: slideUp 5s 2s infinite ease-in-out;
 }
 
 .hero .buttons {
-    display: flex;
-    gap: 2rem;
-    margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-
 .hero .buttons .button {
-    display: flex;  
-    align-items: center;
-    gap: .75rem;
-    border-radius: 5rem;
-    transition: transform 350ms;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 5rem;
+  transition: transform 350ms;
 }
 
 .hero .buttons .button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .hero .buttons .button.buy {
-    padding: 1.5rem 3rem;
-    background-color: var(--snitap-sun);
+  padding: 1.5rem 3rem;
+  background-color: var(--snitap-sun);
 }
 
 .hero .buttons .button.play span {
-    padding: 1.5rem;
-    border-radius: 50%;
-    display: flex;
+  padding: 1.5rem;
+  border-radius: 50%;
+  display: flex;
 }
 
 .shadow {
-    box-shadow: 
-    0 2px 5px rgb(0 0 0 / .1),
-    0 20px 12px rgb(0 0 0 / .05),
-    0 36px 15px rgb(0 0 0 / .01)
-    ;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1), 0 20px 12px rgb(0 0 0 / 0.05),
+    0 36px 15px rgb(0 0 0 / 0.01);
+}
+
+.hero > div:nth-child(2) {
+    display: block;
+    max-width: 30.5rem;
+    width: 100%;
+    height: 30.5rem;
+}
+
+.hero > div:nth-child(2) .content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero > div:nth-child(2) img {
+    position: absolute;
+    width: 100%;
+}
+
+.hero > div:nth-child(2) img[src*="Ellipse"] {
+    width: 94%;
+    top: 3%;
+    left: 3%;
+    transform: translateX(200%);
+    animation: slideIn 3s 200ms ease forwards;
+}
+
+.hero > div:nth-child(2) img[src*="patins"] {
+    z-index: 1;
+    transform: translateX(200%);
+    animation: slideIn 3s ease forwards;
+}
+
+.hero > div:nth-child(2) img[src*="stars-1"] {
+    max-width: 5.5rem;
+    top: 30%;
+    z-index: 0;
+    opacity: 0;
+    transform: translateX(400%);
+    animation: slideIn 2s 800ms ease forwards, appear 100ms 800ms forwards;
+}
+
+.hero > div:nth-child(2) img[src*="stars-2"] {
+    max-width: 2.5rem;
+    right: 0;
+    bottom: 35%;
+    z-index: 0;
+    transform: translateX(400%);
+     animation: slideIn 2.2s 800ms ease forwards;
+}
+
+@keyframes slideIn {
+    50% {
+        transform: translateX(-20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
-    /* radical static */
-    0%,
-    20% { /* Reduzido levemente o tempo estático inicial */
-        transform: translateY(0);
-    }
+  /* radical static */
+  0%,
+  20% {
+    /* Reduzido levemente o tempo estático inicial */
+    transform: translateY(0);
+  }
 
-    /* divertida in - Transição mais longa e oversell (salto) menor e mais suave */
-    21% {
-        /* Pula um pouco mais para cima */
-        transform: translateY(calc(-5rem - 8px)); 
-    }
+  /* divertida in - Transição mais longa e oversell (salto) menor e mais suave */
+  21% {
+    /* Pula um pouco mais para cima */
+    transform: translateY(calc(-5rem - 8px));
+  }
 
-    23% {
-        /* Volta um pouco */
-        transform: translateY(calc(-5rem + 4px));
-    }
+  23% {
+    /* Volta um pouco */
+    transform: translateY(calc(-5rem + 4px));
+  }
 
-    25% {
-        /* Chega mais perto */
-        transform: translateY(calc(-5rem - 2px));
-    }
+  25% {
+    /* Chega mais perto */
+    transform: translateY(calc(-5rem - 2px));
+  }
 
-    27% {
-        /* Quase no lugar */
-        transform: translateY(calc(-5rem + 1px));
-    }
+  27% {
+    /* Quase no lugar */
+    transform: translateY(calc(-5rem + 1px));
+  }
 
-    /* divertida static - Tempo estático */
-    30%,
-    50% { /* Reduzido levemente o tempo estático */
-        transform: translateY(-5rem);
-    }
+  /* divertida static - Tempo estático */
+  30%,
+  50% {
+    /* Reduzido levemente o tempo estático */
+    transform: translateY(-5rem);
+  }
 
-    /* saudável in - Transição mais longa e oversell menor e mais suave */
-    51% {
-        transform: translateY(calc(-10rem - 8px));
-    }
+  /* saudável in - Transição mais longa e oversell menor e mais suave */
+  51% {
+    transform: translateY(calc(-10rem - 8px));
+  }
 
-    53% {
-        transform: translateY(calc(-10rem + 4px));
-    }
+  53% {
+    transform: translateY(calc(-10rem + 4px));
+  }
 
-    55% {
-        transform: translateY(calc(-10rem - 2px));
-    }
+  55% {
+    transform: translateY(calc(-10rem - 2px));
+  }
 
-    57% {
-        transform: translateY(calc(-10rem + 1px));
-    }
+  57% {
+    transform: translateY(calc(-10rem + 1px));
+  }
 
-    /* saudável static - Tempo estático */
-    60%,
-    80% { /* Reduzido levemente o tempo estático */
-        transform: translateY(-10rem);
-    }
+  /* saudável static - Tempo estático */
+  60%,
+  80% {
+    /* Reduzido levemente o tempo estático */
+    transform: translateY(-10rem);
+  }
 
-    /* radical in - Transição mais longa e oversell menor e mais suave */
-    81% {
-        transform: translateY(calc(-15rem - 8px));
-    }
+  /* radical in - Transição mais longa e oversell menor e mais suave */
+  81% {
+    transform: translateY(calc(-15rem - 8px));
+  }
 
-    83% {
-        transform: translateY(calc(-15rem + 4px));
-    }
+  83% {
+    transform: translateY(calc(-15rem + 4px));
+  }
 
-    85% {
-        transform: translateY(calc(-15rem - 2px));
-    }
+  85% {
+    transform: translateY(calc(-15rem - 2px));
+  }
 
-    87% {
-        transform: translateY(calc(-15rem + 1px));
-    }
-    
-    90%, /* Mantém o foco no -15rem por um breve momento */
+  87% {
+    transform: translateY(calc(-15rem + 1px));
+  }
+
+  90%, /* Mantém o foco no -15rem por um breve momento */
     100% {
-        transform: translateY(-15rem);
-    }
-} 
+    transform: translateY(-15rem);
+  }
+}
