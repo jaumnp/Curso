@@ -1,0 +1,148 @@
+.hero {
+  width: 100%;
+  padding: 2.5rem 2rem;
+}
+
+.hero h1 div {
+  display: inline-block;
+  overflow: hidden;
+  height: 5rem;
+  width: min-content;
+  vertical-align: bottom;
+}
+
+.hero h1 span:nth-child(1),
+.hero h1 span:nth-child(4) {
+  color: var(--snitap-sky-mid);
+}
+
+.hero h1 span:nth-child(2) {
+  color: var(--snitap-joy-mid);
+}
+
+.hero h1 span:nth-child(3) {
+  color: var(--snitap-leaf-mid);
+}
+
+.hero h1 span {
+    display: block;
+    animation: slideUp 6s infinite ease-in-out;
+}
+
+.hero .buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+
+.hero .buttons .button {
+    display: flex;  
+    align-items: center;
+    gap: .75rem;
+    border-radius: 5rem;
+    transition: transform 350ms;
+}
+
+.hero .buttons .button:hover {
+    transform: scale(1.1);
+}
+
+.hero .buttons .button.buy {
+    padding: 1.5rem 3rem;
+    background-color: var(--snitap-sun);
+}
+
+.hero .buttons .button.play span {
+    padding: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+}
+
+.shadow {
+    box-shadow: 
+    0 2px 5px rgb(0 0 0 / .1),
+    0 20px 12px rgb(0 0 0 / .05),
+    0 36px 15px rgb(0 0 0 / .01)
+    ;
+}
+
+@keyframes slideUp {
+    /* radical static */
+    0%,
+    20% { /* Reduzido levemente o tempo estático inicial */
+        transform: translateY(0);
+    }
+
+    /* divertida in - Transição mais longa e oversell (salto) menor e mais suave */
+    21% {
+        /* Pula um pouco mais para cima */
+        transform: translateY(calc(-5rem - 8px)); 
+    }
+
+    23% {
+        /* Volta um pouco */
+        transform: translateY(calc(-5rem + 4px));
+    }
+
+    25% {
+        /* Chega mais perto */
+        transform: translateY(calc(-5rem - 2px));
+    }
+
+    27% {
+        /* Quase no lugar */
+        transform: translateY(calc(-5rem + 1px));
+    }
+
+    /* divertida static - Tempo estático */
+    30%,
+    50% { /* Reduzido levemente o tempo estático */
+        transform: translateY(-5rem);
+    }
+
+    /* saudável in - Transição mais longa e oversell menor e mais suave */
+    51% {
+        transform: translateY(calc(-10rem - 8px));
+    }
+
+    53% {
+        transform: translateY(calc(-10rem + 4px));
+    }
+
+    55% {
+        transform: translateY(calc(-10rem - 2px));
+    }
+
+    57% {
+        transform: translateY(calc(-10rem + 1px));
+    }
+
+    /* saudável static - Tempo estático */
+    60%,
+    80% { /* Reduzido levemente o tempo estático */
+        transform: translateY(-10rem);
+    }
+
+    /* radical in - Transição mais longa e oversell menor e mais suave */
+    81% {
+        transform: translateY(calc(-15rem - 8px));
+    }
+
+    83% {
+        transform: translateY(calc(-15rem + 4px));
+    }
+
+    85% {
+        transform: translateY(calc(-15rem - 2px));
+    }
+
+    87% {
+        transform: translateY(calc(-15rem + 1px));
+    }
+    
+    90%, /* Mantém o foco no -15rem por um breve momento */
+    100% {
+        transform: translateY(-15rem);
+    }
+} 
